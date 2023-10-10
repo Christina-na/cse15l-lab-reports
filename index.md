@@ -4,9 +4,9 @@
    
     a. With no argument
 
-    ```
-    [user@sahara ~]$ cd
-    ```
+    
+···· [user@sahara ~]$ cd
+    
 * There is no output for this command.
 * The working directory is "user@sahara~" when the command was run. 
 * There is no specified path provided for changing the working directory; as a result, this command does not make sense, and there is no output
@@ -14,10 +14,10 @@
 
     b. With a path to a directory as an argument
    
-    ```
-    [user@sahara ~]$ cd lecture1
-    [user@sahara ~/lecture1]$ 
-    ```
+
+····    [user@sahara ~]$ cd lecture1
+····    [user@sahara ~/lecture1]$ 
+
 * The working directory is "user@sahara~" when the command was run.  
 * When a path to a directory "lecture 1" is provided, the "cd" command alters the working directory from "user@sahara~" to "user@sahara ~/lecture1"
 * The output is not an error.
