@@ -92,7 +92,6 @@ Hello.java
       
 2. With a path to a directory as an argument
 ```
-code block
 cat lecture1
 cat: lecture1: Is a directory
 ```      
