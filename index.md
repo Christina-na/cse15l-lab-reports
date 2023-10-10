@@ -1,5 +1,4 @@
 #Lab Report 1
-
 1. “cd” command
    
 a. With no argument
@@ -113,6 +112,7 @@ cat: Hello.java: No such file or directory
 * The output is an error because "Hello.java" is not located directly under "user@sahara~". 
     
    ii. case 2:
+
 ```
 [user@sahara ~/lecture1]$ cat Hello.java
 import java.io.IOException;
@@ -124,7 +124,8 @@ public class Hello {
 public static void main(String[] args) throws IOException {
 String content = Files.readString(Path.of(args[0]),StandardCharsets.UTF_8);    
 System.out.println(content);}}[user@sahara ~/lecture1]$ 
-  ``` 
+```
+
 * The working directory is "user@sahara~" when the command was run. 
 * The "cat" command is used to print the content of the files 
 "Hello.java", given by paths "Hello.java".
