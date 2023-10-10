@@ -1,6 +1,6 @@
-#Lab Report 1
+# Lab Report 1
 
-##“cd” command
+## “cd” command
    
 1. With no argument
 
