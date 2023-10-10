@@ -1,7 +1,8 @@
 #Lab Report 1
-1. “cd” command
+
+##“cd” command
    
-   a. With no argument
+1. With no argument
 
 ```
 [user@sahara ~]$ cd
@@ -11,7 +12,7 @@
 * There is no specified path provided for changing the working directory; as a result, this command does not make sense, and there is no output
 * The output is not an error.
 
-   b. With a path to a directory as an argument
+2. With a path to a directory as an argument
    
 ```
 [user@sahara ~]$ cd lecture1
@@ -22,7 +23,7 @@
 * When a path to a directory "lecture 1" is provided, the "cd" command alters the working directory from "user@sahara~" to "user@sahara ~/lecture1"
 * The output is not an error.
       
-   c. With a path to a file as an argument
+3. With a path to a file as an argument
 ```
 [user@sahara ~/lecture1]$ cd Hello.java
 bash: cd: Hello.java: Not a directory
@@ -33,9 +34,9 @@ bash: cd: Hello.java: Not a directory
 * The output is an error because the "cd" command expects a directory path, not a file path.
 
   
-2. “ls” command
+## “ls” command
 
-   a. With no argument
+1. With no argument
  
 ```
 [user@sahara ~]$ ls
@@ -46,7 +47,7 @@ lecture1
 * The "ls" command is used to list the files in the current working directory" "user@sahara~", which is "lecture 1"
 * The output is not an error.
 
-   b. With a path to a directory as an argument
+2.  With a path to a directory as an argument
   
 ```
 [user@sahara ~]$ ls lecture1
@@ -58,8 +59,8 @@ Hello.class  Hello.java  messages  README
 * The output is not an error.
 
     
-   c. With a path to a file as an argument
-      i. case 1:
+3. With a path to a file as an argument
+   a. case 1:
       
 ```
 [user@sahara ~]$ ls Hello.java
@@ -69,7 +70,7 @@ ls: cannot access 'Hello.java': No such file or directory
 * The "ls" command is used to list the files in the given path "Hello.java" 
 * The output is an error because "Hello.java"  is not located directly under "user@sahara~".
       
-     ii. case 2:
+   b. case 2:
 ```
 [user@sahara ~/lecture1]$ ls Hello.java
 Hello.java  
@@ -78,9 +79,9 @@ Hello.java
 * The "ls" command is used to list the files in the given path "Hello.java".Since 'Hello.java' is a standalone file, the output consists of the file name itself, which is 'Hello.java'.
 * The output is not an error.
   
-3. “cat” command
+## “cat” command
 
-   a. With no argument
+1. With no argument
 ```
 [user@sahara ~]$ cat
 ```
@@ -89,7 +90,7 @@ Hello.java
 * The "cat" command is used to print the content of the files given by paths
 * The output is an error. There is no specified path provided for printing the contents of the files; as a result, this command does not make sense, and there is no output.
       
-   b. With a path to a directory as an argument
+2. With a path to a directory as an argument
 ```
 code block
 cat lecture1
@@ -100,9 +101,9 @@ cat: lecture1: Is a directory
 * The "cat" command is used to print the content of the files given by paths "lecture 1".
 * The error occurs because the 'cat' command is intended for displaying the contents of files, not directories. Since 'lecture1' is a directory and not a file, attempting to use 'cat' on it results in an error.
 
-   c. With a path to a file as an argument
+3. With a path to a file as an argument
 
-     i. case 1:
+   a. case 1:
 ```
 [user@sahara ~]$ cat Hello.java
 cat: Hello.java: No such file or directory
@@ -111,7 +112,7 @@ cat: Hello.java: No such file or directory
 * The "cat" command is used to print the content of the files given by paths "Hello.java".
 * The output is an error because "Hello.java" is not located directly under "user@sahara~". 
     
-     ii. case 2:
+   b. case 2:
 
 ```
 [user@sahara ~/lecture1]$ cat Hello.java
