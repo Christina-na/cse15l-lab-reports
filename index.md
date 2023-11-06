@@ -1,28 +1,39 @@
 # Lab Report 2
 
 ## Part 1
+
 Code
 ```
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
 class Handler implements URLHandler {
     // The one bit of state on the server: a number that will be manipulated by
     // various requests.
     int count = 0;
+    List<String> addedStrings = new ArrayList<>();
 
     public String handleRequest(URI url) {
-        if (url.getPath().contains("/add-message")) {
+        if (url.getPath().equals("/add-message")) {
             String[] parameters = url.getQuery().split("=");
-            if(parameters[0].contains("s"))
-            {
+            if (parameters[0].equals("s")) {
                 count++;
-                return (count + "." + parameters[1] + "\n");
+                String message = count + "." + parameters[1];
+                addedStrings.add(message);
+                return message + "\n";
             }
             return "404";
         }
-        else return "Not Found!";
-    }
+            else if (url.getPath().contains("/get-messages")) {
+                StringBuilder response = new StringBuilder();
+                for (String addedString : addedStrings) {
+                    response.append(addedString).append("\n");
+                }
+            return response.toString();}
+            else return "Not Found!";
+   }
 }
 
 class StringServer {
