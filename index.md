@@ -59,66 +59,66 @@ The fix addresses this issue by iterating only up to half of the array length `a
 I choose to focus on the grep command and explore four command-line options or alternate ways to use it.
 
 ### `grep -n`: Display the matched lines and their line numbers.
-*> Example 1:
-*> Command: `grep -n "member" file.txt`
-*> Output: 
+* > Example 1:
+* > Command: `grep -n "member" file.txt`
+* > Output: 
 ```
 1: This student club has 15 members.
 3: They are preparing their club activity.
 ```
 
-*> Example 2:
-*> Command: `grep -n "day" file.txt`
-*> Output: `20: Have a great day!`
-*> Explanation: The -n option is used to display line numbers along with the lines containing the specified pattern. This helps in quickly identifying the location of the pattern within the file, making it easier to navigate to specific lines.
-*> Source: https://www.geeksforgeeks.org/grep-command-in-unixlinux/
+* > Example 2:
+* > Command: `grep -n "day" file.txt`
+* > Output: `20: Have a great day!`
+* > Explanation: The -n option is used to display line numbers along with the lines containing the specified pattern. This helps in quickly identifying the location of the pattern within the file, making it easier to navigate to specific lines.
+* > Source: https://www.geeksforgeeks.org/grep-command-in-unixlinux/
 
 ### `grep -w` : Match whole word
-*> Example 1:
-*> Command: `grep -w "is" file.txt`
-*> Output: `This is an apple. `
+* > Example 1:
+* > Command: `grep -w "is" file.txt`
+* > Output: `This is an apple. `
 
-*> Example 2:
-*> Command: `grep -w "their" file.txt`
-*> Output: `Their drawings are creative.`
-*> Explanation: Without -w, the search for "is" would also match within other words (e.g., "This"). With the -w option, grep only returns lines where "is" appears as a whole word, excluding partial matches.
-*> Source: https://www.geeksforgeeks.org/grep-command-in-unixlinux/
+* > Example 2:
+* > Command: `grep -w "their" file.txt`
+* > Output: `Their drawings are creative.`
+* > Explanation: Without -w, the search for "is" would also match within other words (e.g., "This"). With the -w option, grep only returns lines where "is" appears as a whole word, excluding partial matches.
+* > Source: https://www.geeksforgeeks.org/grep-command-in-unixlinux/
 
 
 ### `grep -o` : Print only the matched parts of a matching line,
-*> Example 1:
-*> Command: `echo "A quick break" | grep -o "quick"`
-*> Output: `quick`
+* > Example 1:
+* > Command: `echo "A quick break" | grep -o "quick"`
+* > Output: `quick`
 
-*> Example 2:
-*> Command: `echo "apple orange banana" | grep -o "an"`
-*> Output: 
+* > Example 2:
+* > Command: `echo "apple orange banana" | grep -o "an"`
+* > Output: 
 ```
 an
 an
 ```
-*> Explanation: In the first case, the `-o` option here extracts and displays only the matched part of the pattern "quick" from the input string "A quick break" It isolates and prints just the matching substring.In the second case, extracts and displays each occurrence of the pattern "an" separately. It shows all matching substrings found in the input string
+* > Explanation: In the first case, the `-o` option here extracts and displays only the matched part of the pattern "quick" from the input string "A quick break" It isolates and prints just the matching substring.In the second case, extracts and displays each occurrence of the pattern "an" separately. It shows all matching substrings found in the input string
 *> Source: https://www.geeksforgeeks.org/grep-command-in-unixlinux/
 
 ### `grep -v`: This prints out all the lines that do not match the pattern
-*> Example 1:
-*> Command: grep -v "apple" file.txt
-*> Output: 
+* > Example 1:
+* > Command: grep -v "apple" file.txt
+* > Output: 
 ```
 orange
 banana
 grape
 ```
 
-*> Example 2:
-*> Command: grep -v "orange" file.txt
-*> Output: 
+* > Example 2:
+* > Command: grep -v "orange" file.txt
+* > Output: 
 ```
 apple
 banana
 grape
 ```
-*> Explanation: The `-v `option is used to exclude lines containing the specified pattern ("apple" or "orange"). This is helpful when you want to filter out lines that match a particular pattern and focus on the rest of the content
-*> Source: https://www.geeksforgeeks.org/grep-command-in-unixlinux/
+* > Explanation: The `-v `option is used to exclude lines containing the specified pattern ("apple" or "orange"). This is helpful when you want to filter out lines that match a particular pattern and focus on the rest of the content
+* > Source: https://www.geeksforgeeks.org/grep-command-in-unixlinux/
 
 
