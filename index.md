@@ -115,8 +115,8 @@ class ListExamples {
 #### Full command line you ran to trigger the bug
 `bash grade.sh https://github.com/ucsd-cse15l-f22/list-methods-corrected`
 
-### Description of what to edit to fix the bug
+#### Description of what to edit to fix the bug
 In the original code, the line git clone student-submission attempts to clone a repository without specifying a repository URL. This is because there is no positional parameter `$1` to capture the first command-line argument provided to the script. As a result, Git interprets `student-submission` as the repository name, leading to an error because the repository doesn't exist.To resolve this issue, I included `$1` after the `git clone` command. The addition of `$1` allows the script to capture the first command-line argument, which should be the repository URL.
 
-##Part 2 – Reflection
+## Part 2 – Reflection
 In the second half of this quarter, I learned the power and efficiency of using Vim as a text editor. I discovered various commands, shortcuts, and plugins that significantly improved my coding workflow. Vim's modal interface and extensibility have made it a versatile tool. I also learn the advantage of SSH URLs, which provide a secure way to authenticate and interact with remote repositories without needing to enter a username and password for every interaction.
