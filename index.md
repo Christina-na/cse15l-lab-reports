@@ -5,7 +5,9 @@
 The keys pressed: `ssh cs15lfa23mt@ieng6.ucsd.edu <enter>`
 
 ## Step 5:Clone your fork of the repository from my Github account (using the SSH URL)
+<img width="823" alt="Screenshot 2023-12-03 at 6 37 13 PM" src="https://github.com/Christina-xizi/cse15l-lab-reports/assets/146885167/6967b351-907a-47d3-97bd-33cf041c4a21">
 
+The keys pressed: `git clone <ctrl+v> <enter>`
 
 ## Step 6:Run the tests, demonstrating that they fail
 <img width="728" alt="Screenshot 2023-11-19 at 11 51 58 PM" src="https://github.com/Christina-xizi/cse15l-lab-reports/assets/146885167/e81aaa18-4cc8-4b44-908b-5eca0760c152">
