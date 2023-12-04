@@ -1,42 +1,39 @@
-# Lab Report 4
-## Step 4: Log into ieng6
-<img width="647" alt="Screenshot 2023-12-01 at 11 19 59 AM" src="https://github.com/Christina-xizi/cse15l-lab-reports/assets/146885167/3368be73-da3a-4d8c-b2c6-3aa2a3070797">
+# Lab Report 5
+## Part 1 – Debugging Scenario
 
-The keys pressed: `ssh<space>cs15lfa23mt@ieng6.ucsd.edu<enter>`
+### Original post from a student
 
-I input the command `ssh` and my ieng6 account `cs15lfa23mt@ieng6.ucsd.edu` and hit `enter` button to log in to my ieng6 account.
+Hi there,
+I'm having an issue with my `grade.sh` script. I'm trying to clone a student's repository and set up some directories, but it seems like something is not working. Here's a screenshot of the error I'm getting:
 
-## Step 5:Clone your fork of the repository from my Github account (using the SSH URL)
-<img width="823" alt="Screenshot 2023-12-03 at 6 37 13 PM" src="https://github.com/Christina-xizi/cse15l-lab-reports/assets/146885167/6967b351-907a-47d3-97bd-33cf041c4a21">
+<img width="947" alt="Screenshot 2023-12-03 at 10 32 06 PM" src="https://github.com/Christina-xizi/cse15l-lab-reports/assets/146885167/6750a0cc-d035-41ba-9fa6-e8dd75eaea8d">
 
-The keys pressed: `git clone<space><ctrl+v><enter>`
+Here's a screenshot of my `grade.sh` script:
+<img width="890" alt="Screenshot 2023-12-03 at 10 45 01 PM" src="https://github.com/Christina-xizi/cse15l-lab-reports/assets/146885167/cd700830-7576-412c-8c86-939374db9b49">
 
-I copy the SSH URL link from my Github page and in the terminal, I input the command `git clone` and use shortcut `<ctrl+v>`to paste the SSH URL link and hit `enter` button to clone my fork of the repository.
+I think the issue might be related to the cloning part, but I'm not sure. In my grade.sh file, I defined `student-submission` and used `git clone` command to clone the submission. Any help or guidance would be appreciated!
 
-## Step 6:Run the tests, demonstrating that they fail
-<img width="736" alt="Screenshot 2023-12-03 at 6 40 04 PM" src="https://github.com/Christina-xizi/cse15l-lab-reports/assets/146885167/d0dced6c-99cc-450f-85b6-c4cde8a4009a">
 
-The keys pressed: `cd<space>lab7<enter>bash test.sh<enter>`
+### TA's Response
+Hi there! Thank you for reaching out. It looks like the issue might be related to the git clone command in your grade.sh script. The error message suggests that the repository URL might not be passed correctly or that there's an issue with the cloning process. In this case, the git clone command does not having the correct parameters. 
 
-I use the `cd` command to change my working directory to `lab7` and then use the `bash` command to run the `test.sh`.
 
-## Step 7:Edit the code file to fix the failing test
-<img width="682" alt="Screenshot 2023-12-03 at 6 53 08 PM" src="https://github.com/Christina-xizi/cse15l-lab-reports/assets/146885167/c0319166-1c90-4fc6-abf1-73bb9c17cd15">
+### Student's Reply
 
-The key pressed: vim<space>ListExamples.java<enter>44<shift+g>er2:wq!<enter>
+Thanks for your reply! I realize that here was no positional parameter in my original code that that represents the first command-line argument passed to the script. The line  `git clone student-submission` is equivalent to `git clone`, and Git expects a repository URL to be provided after the git clone command. Since there's no repository URL specified, Git interprets "student-submission" as the repository name, but it doesn't exist, resulting in an error. I need to include a "$1" after my "git clone" command to refer to pass the first command-line argument to the script.
 
-I use `vim` command to access the `ListExamples.java` file. According to the test fail message from step 6, I know that the error occur in line 44. Therefore, I used `44<shift+g>` to shift to line 44 and the `i` of `index1` is highlighed. I type in `e` to shift to the last letter of this current word `2` and use `r` to replace the current letter to `2`. After finish editing the file, I use ":wq!" to save the changes and exit the file. 
+Here's the updated code:
+<img width="750" alt="Screenshot 2023-12-03 at 10 50 58 PM" src="https://github.com/Christina-xizi/cse15l-lab-reports/assets/146885167/893fd209-e22f-45be-a00e-e8e84a28894b">
 
-## Step 8:Run the tests, demonstrating that they now succeed
-<img width="472" alt="Screenshot 2023-12-03 at 8 22 14 PM" src="https://github.com/Christina-xizi/cse15l-lab-reports/assets/146885167/4cd7a2f3-0b11-4057-915f-e1fc3db21d0b">
+Here's the succesful running result:
+<img width="871" alt="Screenshot 2023-12-03 at 10 53 26 PM" src="https://github.com/Christina-xizi/cse15l-lab-reports/assets/146885167/9b548eb1-1cd4-4655-893e-4ba93556a1be">
 
-The keys pressed: `<up><up><enter>`
+### Additional Information
 
-The same test running command is used in step 6, therefore I used the <up> key twice to find the history and run it.
-  
-## Step 9:Commit and push the resulting change to your Github account (you can pick any commit message!)
-<img width="764" alt="Screenshot 2023-12-03 at 8 43 18 PM" src="https://github.com/Christina-xizi/cse15l-lab-reports/assets/146885167/58b919a8-60f7-4783-b56b-333b15a5d370">
+#### File Structure
 
-The key pressed: `git<space>add<space>ListExamples.java<enter>git<space>command<space>-m<space><shift+'>Fixed<space>ListExamples.java<enter>git<space>push<enter>`
+The file structure is the same as week 6's [list-examples-grader](https://github.com/ucsd-cse15l-s23/list-examples-grader)
 
-I use `git add` command to `ListExamples.java` file and use the 'git commit` and `-m` to add the commit message `"Fixed ListExamples.java"` to the java file. In the end, I use `git push` command to push the changes to Github.
+####
+
+6##Part 2 – Reflection
